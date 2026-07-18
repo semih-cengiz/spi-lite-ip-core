@@ -71,6 +71,8 @@ UART bridge (on-board FT2232HQ): TXD = D4, RXD = C4, 115200 baud.
 
 ## Embedded system
 
+![Block design](docs/block_diagram.png)
+
 A MicroBlaze soft processor drives the core over AXI4-Lite. The block design combines MicroBlaze, AXI UartLite, the custom SPI Lite IP, a Clocking Wizard, Processor System Reset, Local Memory (BRAM), the MicroBlaze Debug Module, and an AXI Interconnect.
 
 ### Driving the AD5628 DAC
@@ -102,6 +104,8 @@ A Python script talks to the firmware over the USB-UART bridge and sends single-
 Waveforms use 256 samples per period.
 
 ## Verification
+
+![Square wave output](docs/oscilloscope_captures/Square_v1.jpeg)
 
 - **Simulation** — a Verilog SPI slave model exercises both the TX and RX paths.
 - **On-hardware** — Vivado ILA captures SCLK, MOSI, and CS on the live design.
