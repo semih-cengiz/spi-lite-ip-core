@@ -37,7 +37,7 @@ Which of the 8 CS lines goes active is chosen by a 3-bit field in the Control re
 | `0x00` | TX Data   | Word to transmit                               |
 | `0x04` | RX Data   | Word received                                  |
 | `0x08` | Control   | SPI enable, CS select (3-bit), transfer start  |
-| `0x0C` | Status    | TX empty, RX full, busy flag                   |
+| `0x0C` | Status    | Busy flag, Done-sticky flag                    |
 | `0x10` | Prescaler | SCLK divider (default 50 → 1 MHz)              |
 
 ## Repository structure
@@ -67,7 +67,7 @@ Target board: **Digilent Nexys A7-100T**. DAC: **Pmod DA4** (AD5628). The pin as
 
 The core exposes 8 chip-select lines; this application drives a single DAC, so only `~CS[0]` is wired to the module. MISO is intentionally left out of the constraints: the DA4 has no data-out line, so the RX path is verified in simulation only.
 
-UART bridge (on-board FT2232HQ): TXD = D4, RXD = C4, 115200 baud.
+UART bridge (on-board FT2232HQ): TXD = D4, RXD = C4, 9600 baud.
 
 ## Embedded system
 
@@ -95,7 +95,7 @@ A Python script talks to the firmware over the USB-UART bridge and sends single-
 
 | Byte   | Action        |
 |:------:|---------------|
-| `0x00` | System reset  |
+| `0x00` | Reset (stop waveform) |
 | `0x01` | Square wave   |
 | `0x02` | Sine wave     |
 | `0x03` | Sawtooth      |
