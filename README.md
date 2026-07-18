@@ -119,4 +119,4 @@ Released under the MIT License — see [LICENSE](LICENSE).
 ## Author
 
 **Semih Cengiz** — Electrical & Electronics Engineering, Gazi University
-GitHub: [@GITHUB-KULLANICI-ADIN](https://github.com/semih-cengiz)
+GitHub: [@semih-cengiz](https://github.com/semih-cengiz)
