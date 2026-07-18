@@ -105,7 +105,7 @@ Waveforms use 256 samples per period.
 
 ## Verification
 
-![Square wave output](docs/oscilloscope_captures/Square_v1.jpeg)
+![Square wave output](docs/oscilloscope_captures/Sine _v1.jpeg)
 
 - **Simulation** — a Verilog SPI slave model exercises both the TX and RX paths.
 - **On-hardware** — Vivado ILA captures SCLK, MOSI, and CS on the live design.
